@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e2e2e2, #c9d6ff);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Adding floating elements for creativity */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(129, 140, 248, 0.2);
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Larger circle floating */
+body::before {
+    width: 500px;
+    height: 500px;
+    bottom: -100px;
+    left: -150px;
+    animation-duration: 7s;
+}
+
+/* Smaller circle floating */
+body::after {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -100px;
+    animation-duration: 9s;
+}
+
+/* Float animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(90deg);
+    }
+}
+
+/* Styling for the container with a glow effect */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 50px rgba(129, 140, 248, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2; /* Ensure it's above the floating elements */
+}
+
+
+#reg {
+    font-size: 28px;
+    font-weight: 600;
+    color: #3d5af1;
+}
+
+/* Styling input and icons */
+.container div {
+    position: relative;
+}
+
+.container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+
+}
+.container input {
+    width: 100%;
+    padding: 12px 60px; /* Adjusted padding to fit the icon */
+    margin: 8px 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: #f1f4f9; /* Changed to a darker shade */
+    color: #0d0c22;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.container input::placeholder {
+    color: #94a3b8; /* Placeholder color */
+}
+
+.container input:focus,
+.container input:hover {
+    outline: none;
+    border-color: rgba(129, 140, 248, 1);
+    background-color: #fff; /* Keep white on focus/hover */
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.3);
+}
+
+.container input:focus + i,
+.container input:hover + i {
+    stroke: rgba(129, 140, 248, 1); /* Change stroke color on focus/hover */
+}
+
+
+
+button {
+    width: 335px;
+    font-size: 17px;
+    padding: 0.8em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: dodgerblue;
+    color: white;
+    border-radius: 4px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(30, 144, 255, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+button:active {
+    transform: translate(0em, 0.2em);
+}
+#msg {
+    font-size: 14px;
+    color: #666;
+}
+
+#msg a {
+    text-decoration: none;
+    color: #3d5af1;
+}
+
+#msg a:hover {
+    text-decoration: underline;
+}
